@@ -1,5 +1,6 @@
 package com.example.appcine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        initViews();
+        setupClickListeners();
+
         // Appliquer les insets pour edge-to-edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        initViews();
-        setupClickListeners();
     }
 
     private void initViews() {
@@ -54,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
             } else {
-                // Ici vous ajouterez votre logique de connexion
                 performLogin(email, password);
             }
         });
@@ -65,16 +65,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         signupText.setOnClickListener(v -> {
-            Toast.makeText(this, "Créer un nouveau compte", Toast.LENGTH_SHORT).show();
-            // Ajouter la navigation vers l'écran d'inscription
+            Intent intent = new Intent(MainActivity.this, Register.class);
+            startActivity(intent);
         });
     }
 
     private void performLogin(String email, String password) {
-        // Implémentez votre logique de connexion ici
-        // Exemple : appel API, vérification en base de données, etc.
-
-        // Pour l'exemple, on simule une connexion réussie
         if (email.equals("test@example.com") && password.equals("password")) {
             Toast.makeText(this, "Connexion réussie!", Toast.LENGTH_SHORT).show();
         } else {

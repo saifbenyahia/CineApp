@@ -1,10 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background"
+    android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Carte principale avec effet glass -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:background="@drawable/glass_card_background"
+        android:elevation="8dp"
+        android:gravity="center">
+
+        <!-- Titre -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Créer un compte"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rejoignez notre communauté"
+            android:textSize="16sp"
+            android:textColor="@color/foreground"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Champ Nom complet -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fullNameInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/border"
+            app:hintTextColor="@color/muted_foreground"
+            app:startIconTint="@color/muted_foreground">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fullNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom complet"
+                android:inputType="textPersonName"
+                android:textColor="@color/foreground"
+                android:textColorHint="@color/muted_foreground" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/border"
+            app:hintTextColor="@color/muted_foreground"
+            app:startIconTint="@color/muted_foreground">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/foreground"
+                android:textColorHint="@color/muted_foreground" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ Mot de passe -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/border"
+            app:hintTextColor="@color/muted_foreground"
+            app:startIconTint="@color/muted_foreground"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/muted_foreground">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mot de passe"
+                android:inputType="textPassword"
+                android:textColor="@color/foreground"
+                android:textColorHint="@color/muted_foreground" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ Confirmation mot de passe -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmPasswordInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/border"
+            app:hintTextColor="@color/muted_foreground"
+            app:startIconTint="@color/muted_foreground"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/muted_foreground">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirmer le mot de passe"
+                android:inputType="textPassword"
+                android:textColor="@color/foreground"
+                android:textColorHint="@color/muted_foreground" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Checkbox Conditions d'utilisation -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/termsCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="J'accepte les conditions d'utilisation"
+            android:textColor="@color/foreground"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"
+            app:buttonTint="@color/primary" />
+
+        <!-- Bouton d'inscription -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="S'inscrire"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/primary_foreground"
+            android:paddingVertical="16dp"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="16dp"
+            app:rippleColor="@color/accent" />
+
+        <!-- Lien conditions d'utilisation -->
+        <TextView
+            android:id="@+id/termsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lire les conditions d'utilisation"
+            android:textColor="@color/secondary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Section connexion -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Déjà un compte ? "
+            android:textColor="@color/foreground"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Se connecter"
+            android:textColor="@color/secondary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
