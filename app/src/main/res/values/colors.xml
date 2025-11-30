@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Couleurs principales correspondant au CSS -->
+    <color name="background">#0A1021</color>
+    <color name="foreground">#F1F5F9</color>
+
+    <color name="card">#111827</color>
+    <color name="card_foreground">#F1F5F9</color>
+
+    <color name="primary">#00D4FF</color>
+    <color name="primary_foreground">#111827</color>
+
+    <color name="secondary">#FF6B00</color>
+    <color name="secondary_foreground">#111827</color>
+
+    <color name="muted">#1A243D</color>
+    <color name="muted_foreground">#94A3B8</color>
+
+    <color name="accent">#00D4FF</color>
+    <color name="accent_foreground">#111827</color>
+
+    <color name="destructive">#DC2626</color>
+    <color name="destructive_foreground">#F1F5F9</color>
+
+    <color name="border">#2D3748</color>
+    <color name="input_background">#2D3748</color>
+    <color name="ring">#00D4FF</color>
+
+    <!-- Couleurs pour l'effet glass -->
+    <color name="glass_bg">#991A243D</color>
+    <color name="glass_border">#3300D4FF</color>
 </resources>
